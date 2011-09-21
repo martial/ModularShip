@@ -75,7 +75,8 @@ class testApp : public ofBaseApp {
 		
 	
 		ofImage					mappingPlaceHolder;
-	
+		
+		ofPoint offset;
         //BeatTrackTest               test;
 	
 		

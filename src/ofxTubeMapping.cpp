@@ -316,6 +316,84 @@ void ofxTubeMapping::draw (float x, float y) {
 	
 }
 
+
+void ofxTubeMapping::drawName (float x, float y) {
+	
+	glPushMatrix();
+	glTranslated(x+112, y-7, 0.0);
+	
+	
+	int xPos = 0;
+	int yPos = 7;
+	
+	int iCount = 0;
+	//for ( int i=0; i<2;i++) {
+		
+	ofLog(OF_LOG_NOTICE,"yPos %d", yPos);
+	
+		for ( int j=0; j<88;j++) {
+			//ofLog(OF_LOG_NOTICE, "done %d", count);
+			int index = iCount;
+				
+			tubeManager->tubes[getTubeIndexForMappingId(iCount)]->drawForDisplay(xPos,yPos);
+			//ofDrawBitmapString(tubeId, 112, yPos*20);
+			
+			yPos +=1;
+			iCount++;
+		}
+	xPos=112;
+	yPos = 7;
+	
+	iCount = 176;
+	for ( int j=88; j>=0;j--) {
+		//ofLog(OF_LOG_NOTICE, "done %d", count);
+		int index = iCount;
+		
+		tubeManager->tubes[getTubeIndexForMappingId(iCount)]->drawForDisplay(xPos,yPos);
+		//ofDrawBitmapString(tubeId, 112, yPos*20);
+		
+		yPos +=1;
+		iCount--;
+	}
+		yPos = 7 ;
+		xPos+=112;
+		
+	//}
+	
+	glPopMatrix();
+	
+}
+
+void ofxTubeMapping::debugDrawName (float x, float y) {
+	
+	glPushMatrix();
+	glTranslated(112 + x, y, 0.0);
+	
+	
+	float xPos, yPos = 0;
+	for ( int i=0; i<2;i++) {
+		
+		
+		for ( int j=0; j<88;j++) {
+			
+			int tubeId = getTubeIndexForMappingId(i * 88 + j);
+			//tubeManager->tubes[tubeId]->drawForDisplay((int)xPos,yPos+7);
+			
+			string debug = "O : " + ofToString(i * 88 + j) + " / M : " + ofToString(tubeId); 
+			ofDrawBitmapString(debug, xPos, yPos);
+			
+			yPos +=15.0;
+			
+		}
+		yPos = 0.0;
+		xPos+=200;
+		
+	}
+	
+	glPopMatrix();
+	
+}
+
 void ofxTubeMapping::debugDraw(float x, float y) {
 	
 	ofPushMatrix();
@@ -478,10 +556,12 @@ void ofxTubeMapping::debugDraw(float x, float y) {
 
 int ofxTubeMapping::getTubeIndexForMappingId(int mappingId) {
 	
+	
+	int mapped = mappingId+1;
 	for ( int i = 0; i<tubeManager->tubes.size(); i++ ) {
 		
 		ofxTube * tube = tubeManager->tubes[i];
-		if ( mappingId == tube->mappingId ) return i;
+		if ( mapped == tube->mappingId ) return i;
 	}
 	return 0;
 }

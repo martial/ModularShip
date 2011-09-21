@@ -77,6 +77,9 @@ void ofxTubePixel::drawFor3DView(float x, float y, float z, float alpha) {
 	glPushMatrix();
 	glVertex2d(x+pos.x,y+pos.y);
 	glPopMatrix();
+	
+	//ofRect(x+xpos.x, y+ypos.y,1,1);
+	
 }
 
 void ofxTubePixel::drawForDisplay(float x, float y, float alpha) {

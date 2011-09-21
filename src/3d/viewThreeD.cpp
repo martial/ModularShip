@@ -72,6 +72,7 @@ void viewThreeD::draw(int x, int y) {
 	this->x = x;
 	this->y = y;
 	
+	
 	//ofSetColor(0, 0, 0);
 	
 	ofPushMatrix();
@@ -79,7 +80,7 @@ void viewThreeD::draw(int x, int y) {
 	
 	
 	ofRectangle viewport;
-	viewport.set(0,0, mainSettings::getPanelSize().x-x, mainSettings::getPanelSize().y-y);
+	//viewport.set(0,0, mainSettings::getPanelSize().x-x, mainSettings::getPanelSize().y-y);
 	
 	ofVec3f pos;
 	pos.x = x;
@@ -90,44 +91,24 @@ void viewThreeD::draw(int x, int y) {
 	
 	nodeGrid.updateMouse(viewport);
 	
-	//fbo->.clear();
-	//fbo->begin();
-	//cam.begin();
+	
 	
 	nodeGrid.drawGrid();
-	//cam.end();
-	//fbo->end();
-
-	//fbo->draw(x, y, width,height);
-	
-	
-	
-	//fbo->clear();
-	//fbo->begin();
 
 	
 	glColor3f(1, 1, 1);
-	
 	ofEnableAlphaBlending();
 	
-	
-	//cam.begin(viewport);
-	//glEnable (GL_DEPTH_TEST);
-    //glShadeModel (GL_SMOOTH);
-	
 	nodeGrid.drawTubes();
-	
-	
-	//glDisable(GL_DEPTH_TEST);
-	//cam.end();
-	
+		
 	ofDisableAlphaBlending();
 	ofSetColor(255, 255, 255);
-	//fbo->end();
+	
 	
 	ofPopMatrix();
 	
-		
+	
+	/*
 	if (blurAmount == 0.0 ) {
 	ofEnableAlphaBlending();
 	glColor3f(1,1,1);
@@ -135,8 +116,7 @@ void viewThreeD::draw(int x, int y) {
 	ofDisableAlphaBlending();
 		
 	} 
-	
-	/* else {
+	 else {
 	
 	ofEnableAlphaBlending();
 	glColor3f(1,1,1);

@@ -46,7 +46,7 @@ void oscManager::update() {
 			panel->pickers[1]->setColor(color);
 		}
 		
-		if ( adress == "color/color_2" ) {
+		if ( adress == "color/All Colors" ) {
 			panel->allColorsEnabled = true;
 			ofColor color;
 			color.set(m.getArgAsFloat(0), m.getArgAsFloat(1), m.getArgAsFloat(2));
@@ -82,7 +82,7 @@ void oscManager::update() {
 		
 		
 		
-		ofLog(OF_LOG_NOTICE, m.getAddress());
+		//ofLog(OF_LOG_NOTICE, m.getAddress());
 	}
 	
 	

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		837282B113DEC12800BB1558 /* aubioOSX.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 837282AC13DEC12800BB1558 /* aubioOSX.a */; };
 		837282B213DEC12800BB1558 /* RtMidi.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 837282AF13DEC12800BB1558 /* RtMidi.cpp */; };
+		83A47ED014222566006EEFCD /* superInterfaceImage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 83A47ECF14222566006EEFCD /* superInterfaceImage.cpp */; };
 		83EABEDB13CB3B580088E58D /* Grid.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 83EABE6413CB3B580088E58D /* Grid.cpp */; };
 		83EABEDC13CB3B580088E58D /* viewThreeD.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 83EABE6613CB3B580088E58D /* viewThreeD.cpp */; };
 		83EABEDD13CB3B580088E58D /* AnimationPreview.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 83EABE6813CB3B580088E58D /* AnimationPreview.cpp */; };
@@ -233,6 +234,8 @@
 		837282AE13DEC12800BB1558 /* RtError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RtError.h; sourceTree = "<group>"; };
 		837282AF13DEC12800BB1558 /* RtMidi.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RtMidi.cpp; sourceTree = "<group>"; };
 		837282B013DEC12800BB1558 /* RtMidi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RtMidi.h; sourceTree = "<group>"; };
+		83A47ECE14222566006EEFCD /* superInterfaceImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = superInterfaceImage.h; sourceTree = "<group>"; };
+		83A47ECF14222566006EEFCD /* superInterfaceImage.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = superInterfaceImage.cpp; sourceTree = "<group>"; };
 		83EABE6413CB3B580088E58D /* Grid.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Grid.cpp; sourceTree = "<group>"; };
 		83EABE6513CB3B580088E58D /* Grid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Grid.h; sourceTree = "<group>"; };
 		83EABE6613CB3B580088E58D /* viewThreeD.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = viewThreeD.cpp; sourceTree = "<group>"; };
@@ -682,7 +685,7 @@
 		E45BE9770E8CC7DD009D7055 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = /System/Library/Frameworks/CoreServices.framework; sourceTree = "<absolute>"; };
 		E45BE9790E8CC7DD009D7055 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = /System/Library/Frameworks/OpenGL.framework; sourceTree = "<absolute>"; };
 		E45BE97A0E8CC7DD009D7055 /* QuickTime.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuickTime.framework; path = /System/Library/Frameworks/QuickTime.framework; sourceTree = "<absolute>"; };
-		E4B69B5B0A3A1756003C02F2 /* MODULAR_SHIPDebug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MODULAR_SHIPDebug.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4B69B5B0A3A1756003C02F2 /* MODULAR_SHIP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MODULAR_SHIP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4B6FCAD0C3E899E008CF71C /* openFrameworks-Info.plist */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.plist.xml; path = "openFrameworks-Info.plist"; sourceTree = "<group>"; };
 		E4C2424410CC5A17004149E2 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		E4C2424510CC5A17004149E2 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
@@ -2351,6 +2354,8 @@
 				83EFCE30141DF77600521FCA /* superInterfaceHIntSlider.cpp */,
 				83EFCEBB141E017900521FCA /* superInterfacePalettePicker.h */,
 				83EFCEBC141E017900521FCA /* superInterfacePalettePicker.cpp */,
+				83A47ECE14222566006EEFCD /* superInterfaceImage.h */,
+				83A47ECF14222566006EEFCD /* superInterfaceImage.cpp */,
 			);
 			path = ui;
 			sourceTree = "<group>";
@@ -2538,7 +2543,7 @@
 				E4EEC9E9138DF44700A80321 /* openFrameworks */,
 				BB4B014C10F69532006C3DED /* addons */,
 				E45BE5980E8CC70C009D7055 /* frameworks */,
-				E4B69B5B0A3A1756003C02F2 /* MODULAR_SHIPDebug.app */,
+				E4B69B5B0A3A1756003C02F2 /* MODULAR_SHIP.app */,
 			);
 			sourceTree = "<group>";
 		};
@@ -2592,7 +2597,7 @@
 			);
 			name = MODULAR_SHIP;
 			productName = myOFApp;
-			productReference = E4B69B5B0A3A1756003C02F2 /* MODULAR_SHIPDebug.app */;
+			productReference = E4B69B5B0A3A1756003C02F2 /* MODULAR_SHIP.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -2794,6 +2799,7 @@
 				83EFCE31141DF77600521FCA /* superInterfaceHIntSlider.cpp in Sources */,
 				83EFCEBD141E017900521FCA /* superInterfacePalettePicker.cpp in Sources */,
 				83EFCF8F141E12D900521FCA /* oscManager.cpp in Sources */,
+				83A47ED014222566006EEFCD /* superInterfaceImage.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

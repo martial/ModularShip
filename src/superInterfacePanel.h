@@ -22,6 +22,7 @@
 #include "fpsViewer.h"
 #include "superInterfacePalettePicker.h"
 #include "superInterfaceFFT.h"
+#include "superInterfaceImage.h"
 #include "ofxXmlSettings.h"
 #include "guiView.h"
 
@@ -53,7 +54,11 @@ public:
 	superInterfaceSimpleButton	opacity, size, reverse, color, tapTempo, sequencerEnabled;
 	superInterfaceHSlider		speed, decay;
 	superInterfaceHIntSlider	vertical, colorMode;
+	superInterfaceImage			logoComp;
+	superInterfaceTextLabel		animNames;
+	ofImage						logo;
 	//ofxSimpleGuiSliderInt * verticalSlider;
+	
 	
 	ofColor				globalColor;
 	vector<ofColor>		colors;

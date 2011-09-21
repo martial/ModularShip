@@ -23,6 +23,8 @@ public:
 	void assignTubeId (int id, int mappingId);
 	int getTubeIndexForMappingId(int mappingId);
 	void draw(float x, float y);
+	void drawName(float x, float y);
+	void debugDrawName (float x, float y);
 	void debugDraw(float x, float y);
 	
 	ofxTubeManager * tubeManager;

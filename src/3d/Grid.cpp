@@ -21,7 +21,7 @@ Grid::Grid () {
 	padding.y =  mainSettings::getGridPadding().y;
 	
 	showNumbers = false;
-	showMappingNumbers = false;
+	showMappingNumbers = true;
 	
 	width = coords.x * padding.x * 2;
 	height = coords.y * padding.y;
@@ -217,7 +217,7 @@ void Grid::drawTubes() {
 					ofPushStyle();
 					ofSetColor(255, 255, 255);
 					ofSetDrawBitmapMode(OF_BITMAPMODE_MODEL_BILLBOARD);
-					ofDrawBitmapString(ofToString((showMappingNumbers) ? tubesManager->tubes[count]->id : tubesManager->tubes[count]->mappingId, 0), pos.x, pos.y, 0);
+					ofDrawBitmapString(ofToString((!showMappingNumbers) ? tubesManager->tubes[count]->id : tubesManager->tubes[count]->mappingId, 0), pos.x, pos.y, 0);
 					ofPopStyle();
 				
 				}

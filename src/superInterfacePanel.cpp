@@ -21,7 +21,7 @@ void superInterfacePanel::setup(ofxTubeManager * tubesManager, ofxSoundManager *
 	colorTwoIntensity = 1.0;
 	bcolorTwoSoundEnabled = false;
 	
-	
+	logo.loadImage("logo.png");
 	
 	fps.setup(256, 40, 60);
 	
@@ -31,6 +31,7 @@ void superInterfacePanel::setup(ofxTubeManager * tubesManager, ofxSoundManager *
 	fpsComp.setup(&superInterface, &fps.fbo, 4,4, 4,4, "FPS");
 	view2DFbo.setup(&superInterface, &view2D->fbo, 20,26, 32,32, "VIEW2D FBO");
 	
+	logoComp.setup(&superInterface, &logo, 42,4, 4,4, "LOGO");
 	
 	opacity.setup(&superInterface, tubesManager->soundManager.opacitySoundEnabled, "OPACITY", 0, 0, 8, 4);
 	size.setup(&superInterface, tubesManager->soundManager.sizeSoundEnabled, "SIZE", 0, 4, 8, 4);
@@ -47,7 +48,9 @@ void superInterfacePanel::setup(ofxTubeManager * tubesManager, ofxSoundManager *
 			  
 	colorMode.setup(&superInterface, &tubesManager->colorManager.mode, 8, 16, 16, 2, 0, 5, "COLOR MODE");
 	
+	animNames.setup(&superInterface, 52, 12, "ANIMATION:");
 	
+	superInterface.addComponent(&logoComp, 0);
 	superInterface.addComponent(&fpsComp, 0);
 	superInterface.addComponent(&fft, 0);
 	superInterface.addComponent(&view2DFbo, 0);
@@ -62,6 +65,12 @@ void superInterfacePanel::setup(ofxTubeManager * tubesManager, ofxSoundManager *
 	superInterface.addComponent(&vertical, 0);
 	superInterface.addComponent(&decay, 0);
 	superInterface.addComponent(&colorMode, 0);
+	
+	superInterface.addComponent(&animNames, 0);
+	
+	
+	
+	colorMode.enableAutoUpdate(true);
 	
 	loadXML();
 	
@@ -124,7 +133,7 @@ void superInterfacePanel::loadXML () {
 		ofColor * targetColor = ( i != numOfPanels-1 ) ? &colors[i] : &globalColor;
 		
 		superInterfacePalettePicker * palette = new superInterfacePalettePicker();
-		palette->setup(&superInterface, targetColor, name, 24, i*4, 16, 6);
+		palette->setup(&superInterface, targetColor, name, 24, i*4, 32, 6);
 		superInterface.addComponent(palette, 0);
 		
 		ofAddListener(palette->onClickEvent, this, &superInterfacePanel::onClickHandler);
@@ -186,6 +195,8 @@ void superInterfacePanel::update () {
 	superInterface.update();
 	
 	if ( tubesManager->vAnimationManager.currentAnimation ) vertical.txtLabel.extraText = tubesManager->vAnimationManager.currentAnimation->name;
+	
+	animNames.extraText = " " + tubesManager->player.currentAnimationData->name;
 	
 }
 

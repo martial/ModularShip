@@ -5,6 +5,7 @@
 //--------------------------------------------------------------
 void testApp::setup(){
 	
+	offset.set(1,1);
 	
 	ofSetFrameRate(60);
 	
@@ -106,7 +107,7 @@ void testApp::draw(){
 	
 #ifdef FINAL_APP
 	
-	soundManager.debugDraw();
+	//soundManager.debugDraw();
 	view2D.draw(0,0);
 	if ( bDrawPanel ) interfacePanel.draw();
 	if (bDraw3DView ) view3D.draw(500, 115);
@@ -120,15 +121,23 @@ void testApp::draw(){
    
 	//kinectWrapper.debugDraw();
 		
-	ofPoint offset;
-	offset.set(15, 15, 0);
+	
 	
 	//preview.draw(0, 10);
 	//tubeMapping.draw(0,0);
 	
-	//tubeMapping.debugDraw(0, 100);
-	//tubeMapping.draw(1920 +offset.x, offset.y);
-
+	//tubeMapping.debugDrawName(0,0);
+	//tubeMapping.drawName(0,0);
+	//tubeMapping.drawName(1440+offset.x,offset.y);
+	//ofSetLineWidth(1);
+	//ofLine(1440,1, 1440+112,1);
+	
+	//tubeMapping.drawName(0, 0);
+	tubeMapping.drawName(1440+offset.x, offset.y);
+	
+	//ofSetColor(255, 0, 0);
+	//ofRect(1440, 0, 224, 88);
+	
 	//mappingPlaceHolder.draw(1440+offset.x, offset.y);
 	
 }
@@ -196,6 +205,7 @@ void testApp::keyPressed(int key){
 			
 			
 		case 356:
+			
 			tubesManager.pushAnimation();
 			break;
 
@@ -204,20 +214,35 @@ void testApp::keyPressed(int key){
 			tubesManager.popAnimation();
 			break;
 		
+			/*
 		case 'd':
 			tubesManager.vAnimationManager.popAnimation();
 			break;
+			
 			
 		case 's':
 			tubesManager.vAnimationManager.pushAnimation();
 			
 			break;
+		 */
+		case 'e':
+			//offset.x++;
+			break;
+			
 			
 		case 'R':
 		case 'r':
-			soundManager.setup();
-			soundManager.setRangeLimit(1, 18);
-
+			//soundManager.setup();
+			//soundManager.setRangeLimit(1, 8);
+			//offset.x--;
+			break;
+			
+		case 's':
+		//	offset.y--;
+			break;
+			
+		case 'd':
+		//	offset.y++;
 			break;
 			
 		case 'N':
